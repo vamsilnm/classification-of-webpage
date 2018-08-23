@@ -1,0 +1,32 @@
+Initial Approach: 
+Initial model was built using Url.
+I cleaned the url and made TFIDF vectors on the same and used Stochastic Gradient Descent for building model got accuracy around 73 percent.
+
+Using Text from HTML.
+For parsing from text from HTML tags it was difficult as neither loading on chunks or by using dask i was successful,
+So i read the file row by row using csv reader and made around 8 files each containing 10k rows where Text and Webpage_id were there.
+
+For processing these files 
+Now analysed the number of words in files and kept a threshold of 1500 words for each file and used Webpage_id as indexes made the train data and test data files.
+
+Now used Stochastic Gradient descent for building model.
+
+
+Experimented with adding features like number of words in each file as a feature but accuracy was not the best one by using this. 
+Used Random Forests Classification and also Xg boost Classifier but SGD was best one on Public Private leader Board.
+
+Some Things to be done are experimenting with max_features of TFIDF and using Xgboost classifier with parameter tunning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
