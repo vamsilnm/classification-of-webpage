@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class GFG { 
+
+public static int find(int [] arrA, int k, int v){
+
+        int result=0;
+        int arrSize = arrA.length;
+        //start point
+        for (int startPoint = 0; startPoint <arrSize ; startPoint++) {
+            //group sizes
+            for (int grps = startPoint; grps <=arrSize ; grps++) {
+                //if start point = 1 then
+                //grp size = 1 , take 10
+                //grp size = 2, take 10 4
+                //grp size = 3, take 10 4 2 ans so on
+                int product=1;
+                int noElements=0;
+                String tempSubArrrays ="";
+                for (int j = startPoint ; j < grps ; j++) {
+                    tempSubArrrays += arrA[j] + " ";
+                    product *= arrA[j];
+                    noElements++;
+                }
+                if(product%k==v && noElements>0){
+                    System.out.print(tempSubArrrays);
+                    result++;
+                    System.out.println();
+                }
+
+            }
+        }
+        return result;
+    }
+                /* Driver program to test above function */
+                public static void main (String args[]) 
+                { 
+                                int set[] = {1,2,3,4,5}; 
+                                int set2[]={3,5,2,1};
+                                int set3[]={7,13,10,5,21,22};
+                                int p3=7;
+                                int v3=2;
+                                int p2=3;
+                                int v2=0;
+                                int v = 1; 
+                                int p = 2;
+                                
+                //int result =find(set, p,v);
+                //System.out.println(result);
+                int result2 =find(set2, p2,v2);
+                System.out.println(result2);
+                int result3 =find(set3, p3,v3);
+                System.out.println(result3);
+                } 
+} 
